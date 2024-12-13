@@ -1,5 +1,65 @@
 $red: #db5a5a;
+$blue: #5a5adb;
 
 body{
     background-color: $red;
+}
+
+h2{
+    color: $blue;
+}
+
+nav{
+    background-color: crimson;
+    padding: 8px;
+    border-radius: 15px;
+    ul{
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+        gap: 24px;
+    }
+    a{
+        text-decoration: none;
+        color: antiquewhite;
+        font-size: 18px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            color: darkcyan;
+        }
+    }
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    .card{
+        width: 300px;
+        height: 400px;
+        border: solid 1px $blue;
+        border-radius: 15px;
+        box-shadow: 0 0 10px $red;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px;
+        align-items: center;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+            box-shadow: 0 0 10px $blue;
+        }
+        .ava{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .rating{
+            color: $blue;
+        }
+        .emoticon{
+            color: $red;
+        }
+    }
 }

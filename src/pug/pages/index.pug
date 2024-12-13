@@ -1,9 +1,31 @@
 extends ../layout/main.pug
 
+block variables
+  - var title = 'My home Page'
+
 block content
-    section 
-        .container
-            h1 Welcome to pug page
-            p 
-                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad, ea ratione fugiat animi dolor veritatis accusamus quam temporibus enim.
+  section 
+    .container
+      .top-img
+        img(src="static/petuh.jpg", alt="")
+      h1 Welcome to pug page
+      p 
+          | Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ad, ea ratione fugiat animi dolor veritatis accusamus quam temporibus enim.
+
+      +section('Title1', 'Description one')
+      +section('Title2', 'Description two')
+      +section('Title3', 'Description three')
+    section
+      .cards
+        each card in require ('../../data/data.json')
+          .card
+            img.ava(src=card.avatar)
+            .details
+              h2.name #{card.name}
+              p.position #{card.position}
+              p.feedback #{card.feedback}
+              p.date #{card.date}
+              p.rating #{card.rating}
+              p.emoticon #{card.emoticon}
+
 
